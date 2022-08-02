@@ -40,14 +40,18 @@ void printSensorReading(int sensor, String sensorName) {
 
 
 void changeStateOperationsMotionOne() {
+  noInterrupts();
   ledOneState = !ledOneState;
   digitalWrite(ledLightOne, ledOneState);
   printSensorReading(motionSensorOne, "Motion 1");
+  interrupts();
 }
 
 
 void changeStateOperationsMotionTwo() {
+  noInterrupts();
   ledTwoState = !ledTwoState;
   digitalWrite(ledLightTwo, ledTwoState);
   printSensorReading(motionSensorTwo, "Motion 2");
+  interrupts();
 }
